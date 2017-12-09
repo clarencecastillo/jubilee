@@ -1,0 +1,32 @@
+page-payment {
+  text-align: center;
+
+  div.passcode-input {
+    display: flex;
+
+
+    input[type='password'] {
+      flex-grow: 1;
+      border: none;
+      border-bottom: 1px solid color($colors, dim);
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      font-size: 4rem;
+      margin: 8px;
+      background-color: transparent !important;
+    }
+  }
+
+  ion-row {
+    ion-col {
+      &.cancel {
+        text-align: right;
+      }
+
+      &.confirm {
+        text-align: left;
+      }
+    }
+  }
+}

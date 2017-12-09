@@ -1,0 +1,61 @@
+<ion-header class="dark-header">
+  <ion-navbar>
+    <ion-title>订单已确认</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="drink-container" [style.background-image]="drink.image"></div>
+  <div class="gradient-overlay"></div>
+  <div class="card-container">
+    <ion-card>
+      <ion-card-header>
+        <span small class="price">{{price}}元</span>
+        <ion-card-title>{{drink.name}}</ion-card-title>
+        <p>{{drink.description}}</p>
+      </ion-card-header>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <h2>预定时间</h2>
+            <p>{{bookingTime}}</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <h2>上海新天地</h2>
+            <p>{{bar.name}}</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <h2>小组代码</h2>
+            <p>{{groupCode}}</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button full (click)="addDrinkToCart()">加入购物车</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button full (click)="presentPaymentPopover()">马上付款</button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        其他相关推荐
+      </ion-card-header>
+      <ion-row>
+        <ion-col>
+          <img src="assets/imgs/recommend_1.png" alt="">
+        </ion-col>
+        <ion-col>
+          <img src="assets/imgs/recommend_2.png" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

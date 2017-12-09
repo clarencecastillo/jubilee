@@ -1,0 +1,18 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <div class="form-container">
+    <form [formGroup]="groupOrderForm" (ngSubmit)="dismiss()">
+      <p>输入你的小组点酒代码</p>
+      <ion-item>
+        <ion-input type="text" formControlName="groupCode"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!groupOrderForm.valid">确定</button>
+      <a (click)="presentGroupSessionModal()">还没有提取小组代码？点击这里提取</a>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header class="dark-header">
+
+  <ion-navbar>
+    <ion-title>{{articles[index].title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <img [src]="articles[index].image"/>
+  <div class="article-container">
+    <h1>{{articles[index].subTitle}}</h1>
+    <p>
+      {{articles[index].text}}
+    </p>
+  </div>
+</ion-content>

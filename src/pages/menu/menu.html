@@ -1,0 +1,18 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-list-header>
+      {{bar.name}}
+    </ion-list-header>
+    <ion-item-divider>鸡尾酒</ion-item-divider>
+    <ion-item *ngFor="let drink of drinks;" (click)="dismiss(drink)">
+      <h2>{{drink.name}}</h2>
+      <p>{{drink.description}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

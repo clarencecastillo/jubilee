@@ -1,0 +1,19 @@
+page-article {
+
+  div.article-container {
+    padding: 2rem;
+    padding-top: 0;
+
+    h1 {
+      color: color($colors, primary);
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 2rem;
+      white-space: pre-line;
+      color: color($colors, dark);
+    }
+  }
+}

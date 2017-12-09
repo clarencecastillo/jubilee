@@ -1,0 +1,76 @@
+page-cart {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.98) !important;
+    text-align: center;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+    
+    ion-list {
+      text-align: left;
+
+      p.placeholder {
+        position: absolute;
+        display: block;
+        color: color($colors, dim);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      ion-list-header {
+        background-color: transparent !important;
+        border-top: none !important;
+        color: color($colors, primary) !important;
+      }
+
+      ion-item-divider {
+        background-color: transparent !important;
+        border: none !important;
+        text-align: center;
+      }
+
+      ion-item {
+        background-color: transparent !important;
+
+        &.total {
+          margin-top: 2rem;
+
+          .item-inner{
+            border-top: 1px dashed color($colors, dim);
+          }
+        }
+
+        div.item-inner {
+          border-bottom: 1px solid color($colors, dim) !important;
+        }
+
+        ion-badge {
+          background-color: transparent !important;
+          color: color($colors, primary) !important;
+          font-weight: 400;
+        }
+
+        ion-icon {
+          color: color($colors, dim);
+        }
+
+        h2 {
+          color: color($colors, light);
+        }
+
+        p {
+          color: color($colors, dim);
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+}

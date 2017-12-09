@@ -1,0 +1,28 @@
+<ion-header class="dark-header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>久乐</ion-title>
+  </ion-navbar>
+  <ion-toolbar (click)="goToOrderMenu()" class="primary-toolbar">
+    <ion-title>❤ 制作属于你的鸡尾酒吧!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card (click)="goToArticle(0)">
+    <img src="assets/imgs/article_1.png"/>
+    <ion-card-content>
+      <h1>Cocktail of the Day</h1>
+      <p>Madness for Manhattan!</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card (click)="goToArticle(1)">
+    <img src="assets/imgs/article_2.png"/>
+    <ion-card-content>
+      <h1>Bar of the Day</h1>
+      <p>上海磨轮酒吧</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

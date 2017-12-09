@@ -1,0 +1,8 @@
+{
+  "name": "久乐",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

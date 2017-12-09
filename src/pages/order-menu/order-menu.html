@@ -1,0 +1,116 @@
+<ion-header class="dark-header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-searchbar
+      [(ngModel)]="searchInput"
+      [showCancelButton]="searchShouldShowCancel"
+      (ionInput)="onSearchInput($event)"
+      (ionCancel)="onSearchCancel($event)"
+      [placeholder]="searchPlaceholder">
+    </ion-searchbar>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col text-left>
+        <button ion-button icon-right clear small (click)="presentSortPopover($event)">
+          {{activeSort}}
+          <ion-icon name="arrow-dropdown"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-right [clear]="!hasFilterSelected()" small (click)="presentFilterMenu()">
+          筛选
+          <ion-icon name="funnel"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="right" swipeEnabled="false" [content]="ordermenucontent">
+  <ion-content>
+    <ion-list>
+      <ion-item-group>
+        <ion-item>
+          <ion-label> Free Style</ion-label>
+          <ion-toggle checked="false"></ion-toggle>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          价格
+          <ion-badge item-end color="dark">{{priceFilter.lower}}元</ion-badge>
+          <ion-badge item-end color="dark">{{priceFilter.upper}}元</ion-badge>
+        </ion-item-divider>
+        <ion-item>
+          <ion-range min="0" max="1000" step="50" snaps="true" dualKnobs="true" [(ngModel)]="priceFilter">
+            <ion-label small range-left>0元</ion-label>
+            <ion-label small range-right>1000元</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          地点
+        </ion-item-divider>
+        <div class="menu-grid">
+          <button *ngFor="let location of locationFilter;" ion-button [ngClass]="{'active' : location.active}" (click)="location.active = !location.active">{{location.name}}</button>
+        </div>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          品牌
+        </ion-item-divider>
+        <div class="menu-grid">
+          <button *ngFor="let brand of brandFilter;" ion-button [ngClass]="{'active' : brand.active}" (click)="brand.active = !brand.active">{{brand.name}}</button>
+        </div>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          鸡尾酒类型
+        </ion-item-divider>
+        <div class="menu-grid">
+          <button *ngFor="let cocktail of cocktailFilter;" ion-button [ngClass]="{'active' : cocktail.active}" (click)="cocktail.active = !cocktail.active">{{cocktail.name}}</button>
+        </div>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-content #ordermenucontent padding>
+  <ion-card *ngIf="!shouldShowBarList()">
+    <img src="assets/imgs/order_menu_1.png"/>
+    <ion-card-content>
+      <p>今日推荐 | 如何调理一杯石榴鸡尾酒</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="!shouldShowBarList()">
+    <img src="assets/imgs/order_menu_2.png"/>
+    <ion-card-content>
+      <p>女生去酒吧应该喝什么酒?</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngIf="shouldShowBarList() && locationFilter[0].active">
+    <ion-item *ngFor="let bar of barList;" (click)="goToBar(bar)">
+      <ion-badge item-end>
+        <ion-icon name="star" [color]="bar.rating >= 1 ? 'primary' : 'dim'" ></ion-icon>
+        <ion-icon name="star" [color]="bar.rating >= 2 ? 'primary' : 'dim'" ></ion-icon>
+        <ion-icon name="star" [color]="bar.rating >= 3 ? 'primary' : 'dim'" ></ion-icon>
+        <ion-icon name="star" [color]="bar.rating >= 4 ? 'primary' : 'dim'" ></ion-icon>
+        <ion-icon name="star" [color]="bar.rating == 5 ? 'primary' : 'dim'" ></ion-icon>
+      </ion-badge>
+      <ion-thumbnail item-start>
+        <img [src]="bar.image">
+      </ion-thumbnail>
+      <h2>{{bar.name}}</h2>
+      <p>{{bar.location}}</p>
+    </ion-item>
+  </ion-list>
+  <div class="placeholder" *ngIf="shouldShowBarList() && !locationFilter[0].active">
+    <ion-icon name="ios-search-outline"></ion-icon>
+    <p>不好意思亲，没有搜索结果 :(</p>
+  </div>
+</ion-content>

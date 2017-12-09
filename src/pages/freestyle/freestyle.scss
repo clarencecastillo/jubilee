@@ -1,0 +1,126 @@
+page-freestyle {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.98) !important;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+
+    ion-list {
+      ion-list-header {
+        background-color: transparent !important;
+        border-top: none !important;
+        color: color($colors, primary) !important;
+      }
+
+      ion-item-divider {
+        background-color: transparent !important;
+        border: none !important;
+        text-align: center;
+      }
+
+      ion-item {
+        background-color: transparent !important;
+
+        div.item-inner {
+          border-bottom: 1px solid color($colors, dim) !important;
+        }
+
+        h2 {
+          color: color($colors, light);
+        }
+
+        p {
+          color: color($colors, dim);
+        }
+      }
+    }
+
+    ion-slides {
+
+      ion-slide {
+        margin-bottom: 4rem;
+
+        &.final-step {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          height: auto;
+
+          div.center-container {
+            color: color($colors, light);
+          }
+        }
+      }
+
+      div.swiper-pagination {
+        .swiper-pagination-bullet-active {
+          background: color($colors, primary) !important;
+        }
+      }
+
+      ion-item-divider {
+        ion-label {
+          color: color($colors, primary);
+        }
+      }
+
+      ion-list.step-options {
+        height: 40rem;
+        overflow-y: scroll;
+
+        ion-card.card-background {
+          position: relative;
+          text-align: center;
+          height:18rem;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+
+          &.active {
+            .overlay {
+              background: -webkit-linear-gradient(transparent, color($colors, primary));
+              background: -o-linear-gradient(transparent, color($colors, primary));
+              background: -moz-linear-gradient(rtransparent, color($colors, primary));
+              background: linear-gradient(transparent, color($colors, primary));
+            }
+          }
+
+          .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background: -webkit-linear-gradient(rgba(black, 0.2), rgba(black, 0.3), black);
+            background: -o-linear-gradient(rgba(black, 0.2), rgba(black, 0.3), black);
+            background: -moz-linear-gradient(rgba(black, 0.2), rgba(black, 0.3), black);
+            background: linear-gradient(rgba(black, 0.2), rgba(black, 0.3), black);
+
+            &.active {
+              background: -webkit-linear-gradient(transparent, color($colors, primary));
+              background: -o-linear-gradient(transparent, color($colors, primary));
+              background: -moz-linear-gradient(rtransparent, color($colors, primary));
+              background: linear-gradient(transparent, color($colors, primary));
+            }
+          }
+
+          .card-title {
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            color: color($colors, light);
+          }
+        }
+      }
+    }
+
+  }
+}

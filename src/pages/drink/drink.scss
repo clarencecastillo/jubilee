@@ -1,0 +1,49 @@
+page-drink {
+
+  ion-content {
+    background-color: color($colors, dark) !important;
+  }
+
+  div.drink-container {
+    position: fixed;
+    height: 50%;
+    top: 56px;
+    width: 100%;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  div.card-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 50%;
+  }
+
+  ion-card {
+
+    p {
+      white-space: pre-line;
+    }
+
+    span.price {
+      float: right;
+      display: block;
+      padding-top: 8px;
+      margin-top: 2px;
+      color: color($colors, primary);
+    }
+  }
+
+  div.gradient-overlay {
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(transparent, black);
+    background: -o-linear-gradient(transparent, black);
+    background: -moz-linear-gradient(transparent, black);
+    background: linear-gradient(transparent, black);
+  }
+}

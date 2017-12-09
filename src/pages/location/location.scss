@@ -1,0 +1,27 @@
+page-location {
+
+  ion-fab[top] {
+    top: 74px;
+  }
+
+  div.location-container {
+    width: 100%;
+    height: calc(100% - 56px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.image-container {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+  div.overlay {
+    padding: 2rem;
+    background-color: color($colors, dark);
+    color: color($colors, light);
+  }
+}

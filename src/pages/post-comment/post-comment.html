@@ -1,0 +1,24 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss(false)">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <div class="form-container">
+    <form [formGroup]="postCommentForm" (ngSubmit)="dismiss(true)">
+      <p>亲，请留下你的评价和评分吧</p>
+      <div class="rating">
+        <ion-icon name="star" [color]="postCommentForm.controls['rating'].value >= 1 ? 'primary' : 'dim'" (click)="setRating(1)"></ion-icon>
+        <ion-icon name="star" [color]="postCommentForm.controls['rating'].value >= 2 ? 'primary' : 'dim'" (click)="setRating(2)"></ion-icon>
+        <ion-icon name="star" [color]="postCommentForm.controls['rating'].value >= 3 ? 'primary' : 'dim'" (click)="setRating(3)"></ion-icon>
+        <ion-icon name="star" [color]="postCommentForm.controls['rating'].value >= 4 ? 'primary' : 'dim'" (click)="setRating(4)"></ion-icon>
+        <ion-icon name="star" [color]="postCommentForm.controls['rating'].value == 5 ? 'primary' : 'dim'" (click)="setRating(5)"></ion-icon>
+      </div>
+      <ion-item>
+        <ion-input type="text" formControlName="comment"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!postCommentForm.valid">评价</button>
+    </form>
+  </div>
+</ion-content>

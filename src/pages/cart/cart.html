@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-list-header>
+      {{bar.name}}
+    </ion-list-header>
+    <ion-item-divider>我的购物车</ion-item-divider>
+    <p class="placeholder" *ngIf="cart.length == 0">亲, 你还没有订单哦</p>
+    <ion-item *ngFor="let drink of cart; let i = index;">
+      <ion-badge item-end>
+        {{drink.price}}元
+      </ion-badge>
+      <ion-icon item-end name="close" small (click)="removeDrink(i)"></ion-icon>
+      <h2>{{i + 1}}. {{drink.name}}</h2>
+      <p>{{drink.description}}</p>
+    </ion-item>
+    <ion-item *ngIf="cart.length > 0" class="total">
+      <ion-badge item-end>
+        {{58.88 * cart.length}}元
+      </ion-badge>
+      <h2>Total</h2>
+    </ion-item>
+  </ion-list>
+  <ion-row *ngIf="cart.length > 0" >
+    <ion-col>
+      <button ion-button full (click)="clearCart()">清理购物车</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full (click)="presentPaymentPopover()">付款</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

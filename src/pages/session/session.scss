@@ -1,0 +1,57 @@
+page-session {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.9) !important;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+  }
+
+  div.form-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    form {
+      margin: auto;
+
+      p {
+        color: color($colors, light);
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      ion-item {
+        background-color: transparent !important;
+        margin-bottom: 2rem;
+        color: color($colors, light);
+        border-bottom: 1px solid color($colors, dim);
+        font-size: 2rem;
+        padding: 0;
+
+        ion-datetime {
+          text-align: center;
+          padding: 0;
+          width: 100%;
+        }
+
+        input {
+          text-align: center;
+        }
+
+        div.item-inner {
+          border: none !important;
+          padding: 0 !important;
+        }
+      }
+
+      text-align: center;
+    }
+  }
+}

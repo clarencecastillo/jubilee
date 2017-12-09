@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <div class="form-container">
+    <form [formGroup]="sessionForm" (ngSubmit)="dismiss()">
+      <p>输入你的预定时间</p>
+      <ion-item>
+        <ion-datetime displayFormat="HH:mm" formControlName="bookingTime"></ion-datetime>
+      </ion-item>
+      <p *ngIf="type=='group'">输入你的预定人数</p>
+      <ion-item *ngIf="type=='group'">
+        <ion-input type="number" formControlName="peopleCount"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!sessionForm.valid">确定</button>
+    </form>
+  </div>
+</ion-content>

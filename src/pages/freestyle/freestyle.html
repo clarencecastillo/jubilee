@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss(false)">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-list-header>
+      {{bar.name}}
+    </ion-list-header>
+    <ion-item-divider>Freestyle</ion-item-divider>
+    <ion-slides pager>
+      <ion-slide *ngFor="let step of steps;">
+        <ion-list>
+          <ion-item-divider>{{step.name}}</ion-item-divider>
+          <ion-list class="step-options">
+            <ion-card class="card-background" *ngFor="let option of step.options;" (click)="option.active = !option.active" [ngClass]="{'active' : option.active}">
+              <img [src]="option.image"/>
+              <div class="overlay"></div>
+              <div class="card-title">{{option.description}}</div>
+            </ion-card>
+          </ion-list>
+        </ion-list>
+      </ion-slide>
+      <ion-slide class="final-step">
+        <ion-list>
+          <ion-item-divider>第四步: 付款</ion-item-divider>
+        </ion-list>
+        <div class="center-container">
+          <p>现在就付款?</p>
+          <button ion-button (click)="dismiss(true)">下订单</button>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
+</ion-content>

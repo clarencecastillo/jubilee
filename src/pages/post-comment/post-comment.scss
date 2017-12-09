@@ -1,0 +1,53 @@
+page-post-comment {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.9) !important;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+  }
+
+  div.form-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+
+    form {
+      text-align: center;
+      margin: auto;
+
+      p {
+        color: color($colors, light);
+        font-size: 2rem;
+      }
+
+      div.rating {
+        ion-icon {
+          font-size: 4rem;
+        }
+      }
+
+      ion-item {
+        background-color: transparent !important;
+        margin-bottom: 2rem;
+        color: color($colors, light);
+        border-bottom: 1px solid color($colors, dim);
+        font-size: 2rem;
+
+        input {
+          text-align: center;
+        }
+
+        div.item-inner {
+          border: none !important;
+        }
+      }
+    }
+  }
+}

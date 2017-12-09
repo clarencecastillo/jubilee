@@ -1,0 +1,40 @@
+page-comments {
+
+  ion-content {
+
+    ion-toolbar {
+      position: fixed;
+      top: 34px;
+    }
+
+    ion-list {
+      margin-top: 72px !important;
+      padding-bottom: 16px !important;
+    }
+
+    .form-container {
+      background-color: color($colors, dark);
+      padding: 8px;
+
+      form {
+        display: flex;
+
+        ion-item {
+          background-color: transparent !important;
+          margin-right: 8px;
+        }
+
+        div.item-inner {
+          border-bottom: 1px solid color($colors, primary) !important;
+        }
+
+        input {
+          background-color: transparent !important;
+          box-shadow: none !important;
+
+          color: color($colors, dim) !important;
+        }
+      }
+    }
+  }
+}

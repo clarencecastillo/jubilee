@@ -1,0 +1,44 @@
+page-menu {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.98) !important;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+
+    ion-list {
+      ion-list-header {
+        background-color: transparent !important;
+        border-top: none !important;
+        color: color($colors, primary) !important;
+      }
+
+      ion-item-divider {
+        background-color: transparent !important;
+        border: none !important;
+        text-align: center;
+      }
+
+      ion-item {
+        background-color: transparent !important;
+
+        div.item-inner {
+          border-bottom: 1px solid color($colors, dim) !important;
+        }
+
+        h2 {
+          color: color($colors, light);
+        }
+
+        p {
+          color: color($colors, dim);
+        }
+      }
+    }
+  }
+}

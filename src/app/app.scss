@@ -1,0 +1,111 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-header.dark-header {
+
+  ion-titlebar,
+  ion-navbar {
+
+    .toolbar-background {
+      background-color: color($colors, dark);
+    }
+
+    button.bar-button {
+      color: color($colors, dim);
+    }
+
+    div.searchbar-input-container {
+
+      button.searchbar-md-cancel {
+        color: color($colors, dim);
+      }
+
+      input.searchbar-input {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid color($colors, primary);
+        color: color($colors, dim) !important;
+      }
+    }
+  }
+
+  ion-title {
+    div {
+      color: color($colors, light) !important;
+    }
+  }
+}
+
+ion-toolbar.primary-toolbar {
+
+  .toolbar-background {
+    background-color: color($colors, primary);
+  }
+
+  ion-title {
+    text-align: center;
+
+    div {
+      color: color($colors, light) !important;
+    }
+  }
+
+}
+
+ion-toolbar.dark-toolbar {
+  text-align: center;
+
+  .toolbar-background {
+    background-color: color($colors, dark);
+  }
+
+  ion-title {
+    text-align: center;
+
+    div {
+      color: color($colors, primary) !important;
+    }
+  }
+}
+
+.sort-popover {
+
+  .popover-content {
+    top: 112px !important;
+    left: 0px !important;
+    width: 100%;
+  }
+}
+
+.payment-popover {
+  .popover-content {
+    height: 40%;
+    top: 60% !important;
+    left: 0px !important;
+    width: 100%;
+  }
+}
+
+.comment-toast {
+  .toast-container {
+    background-color: color($colors, dark);
+
+    button {
+      color: color($colors, primary);
+    }
+  }
+}

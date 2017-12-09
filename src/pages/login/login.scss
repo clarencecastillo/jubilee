@@ -1,0 +1,91 @@
+page-login {
+
+  $bg-width: 50px;
+  $bg-height: 50px;
+  $bg-url: "../assets/imgs/login_bg.png";
+
+  /* Animations */
+  @-webkit-keyframes bg-scrolling-reverse {
+    100% { background-position: $bg-width $bg-height; }
+  }
+  @-moz-keyframes    bg-scrolling-reverse {
+    100% { background-position: $bg-width $bg-height; }
+  }
+  @-o-keyframes      bg-scrolling-reverse {
+    100% { background-position: $bg-width $bg-height; }
+  }
+  @keyframes         bg-scrolling-reverse {
+    100% { background-position: $bg-width $bg-height; }
+  }
+
+  @-webkit-keyframes bg-scrolling {
+    0% { background-position: $bg-width $bg-height; }
+  }
+  @-moz-keyframes    bg-scrolling {
+    0% { background-position: $bg-width $bg-height; }
+  }
+  @-o-keyframes      bg-scrolling {
+    0% { background-position: $bg-width $bg-height; }
+  }
+  @keyframes         bg-scrolling {
+    0% { background-position: $bg-width $bg-height; }
+  }
+
+  ion-content {
+    background: url($bg-url) repeat 0 0 !important;
+
+    -webkit-animation: bg-scrolling-reverse 2s infinite; /* Safari 4+ */
+    -moz-animation:    bg-scrolling-reverse 2s infinite; /* Fx 5+ */
+    -o-animation:      bg-scrolling-reverse 2s infinite; /* Opera 12+ */
+    animation:         bg-scrolling-reverse 2s infinite; /* IE 10+ */
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function:    linear;
+    -o-animation-timing-function:      linear;
+    animation-timing-function:         linear;
+
+    div.login-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      div.login-title {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+
+        div.title {
+          flex-grow: 1;
+          font-size: 8rem;
+          font-weight: 200;
+          color: color($colors, light);
+
+          div.sub-title {
+            display: block;
+            font-size: 4rem;
+            font-weight: lighter;
+            color: color($colors, primary);
+          }
+        }
+      }
+
+      div.login-footer {
+        flex-grow: 1;
+        display: flex;
+
+        button {
+          margin-top: auto;
+          margin-bottom: 4rem;
+        }
+
+        div.sub-footer {
+          color: color($colors, dim);
+        }
+
+        flex-direction: column;
+      }
+    }
+  }
+}

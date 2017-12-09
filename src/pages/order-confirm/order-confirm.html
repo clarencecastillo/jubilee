@@ -1,0 +1,16 @@
+<ion-content padding>
+  <ion-fab top right>
+    <button ion-fab (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+  <div class="confirm-container">
+    <div class="center-container">
+      <p>亲，恭喜你!</p>
+      <p>属于你的freestyle已经提交给调酒师了!</p>
+      <p>期待调酒师为你调出的惊喜吗?</p>
+      <p>期待在{{bar.name}}里遇见你!</p>
+      <button ion-button (click)="dismiss()">确定</button>
+    </div>
+  </div>
+</ion-content>

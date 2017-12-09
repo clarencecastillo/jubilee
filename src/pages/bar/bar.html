@@ -1,0 +1,22 @@
+<ion-header class="dark-header">
+
+  <ion-navbar>
+    <ion-title>{{params.bar.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="presentCartModal()">
+        <ion-icon name="cart"></ion-icon>
+        {{cart.length}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-tabs #bartabs selectedIndex="0" tabsPlacement="top">
+    <ion-tab [root]="barHomePage" [rootParams]="params" tabTitle="开始"></ion-tab>
+    <ion-tab [root]="barLocationPage" [rootParams]="params" tabTitle="360度" ></ion-tab>
+    <ion-tab [root]="barCommentsPage" [rootParams]="params" tabTitle="评论" ></ion-tab>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-toolbar class="primary-toolbar">
+    <ion-title>亲，给{{bar.name}}留下宝贵的评论吧!💖</ion-title>
+  </ion-toolbar>
+  <ion-list>
+    <ion-card *ngFor="let comment of comments;">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="comment.image">
+        </ion-avatar>
+        <ion-badge item-end color="primary">
+          {{comment.rating}}
+          <ion-icon name="star"></ion-icon>
+        </ion-badge>
+        <h2>{{comment.name}}</h2>
+        <p>{{comment.time}}</p>
+      </ion-item>
+      <ion-card-content>
+        <p>{{comment.comment}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="dark-toolbar" (click)="presentCommentModal()">
+    <ion-title>评价</ion-title>
+  </ion-toolbar>
+</ion-footer>

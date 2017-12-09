@@ -1,0 +1,23 @@
+<ion-content padding>
+  <p>输入付款密码</p>
+  <div class="passcode-container">
+    <form [formGroup]="paymentForm">
+      <div class="passcode-input" (click)="enterPassCode()">
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[0]" [ngModelOptions]="{standalone: true}" disabled />
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[1]" [ngModelOptions]="{standalone: true}" disabled />
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[2]" [ngModelOptions]="{standalone: true}" disabled />
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[3]" [ngModelOptions]="{standalone: true}" disabled />
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[4]" [ngModelOptions]="{standalone: true}" disabled />
+        <input type="password" [(ngModel)]="paymentForm.controls['passCode'].value[5]" [ngModelOptions]="{standalone: true}" disabled />
+      </div>
+      <ion-row>
+        <ion-col class="cancel">
+          <button ion-button (click)="dismiss(true)">取消</button>
+        </ion-col>
+        <ion-col class="confirm">
+          <button ion-button (click)="dismiss(false)" [disabled]="!paymentForm.valid">确定</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

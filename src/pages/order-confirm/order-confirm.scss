@@ -1,0 +1,37 @@
+page-order-confirm {
+
+  ion-content {
+    background-color: rgba(color($colors, dark), 0.9) !important;
+
+    ion-fab {
+      button {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: color($colors, primary) !important;
+      }
+    }
+  }
+
+  div.confirm-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+
+    div.center-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+
+      p {
+        color: color($colors, light);
+      }
+
+      button {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
